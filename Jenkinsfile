@@ -2,12 +2,12 @@
 pipeline{
 	agent none
 	stages{
-		stage('code fetch'){
+		stage('Code Fetch'){
 			steps{
 				echo "Code Fetching"
 			}
 		}
-		stage('Build artifacts'){
+		stage('Build Artifacts'){
 			steps{
 				echo "Building artifacts"
 			}
