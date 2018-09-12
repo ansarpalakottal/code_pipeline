@@ -4,7 +4,7 @@ pipeline{
 	stages{
 		stage('code fetch'){
 			steps{
-				sh git clone https://github.com/ansarpalakottal/ansible.git
+				sh "git clone https://github.com/ansarpalakottal/ansible.git"
 			}
 		}
 		stage('Build artifacts'){
