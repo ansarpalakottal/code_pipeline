@@ -19,9 +19,7 @@ pipeline{
 		}
 		stage('Code Deploy'){
 			steps{
-				sh "cd ansible"
-				sh "pwd"
-				sh "ansible-playbook -i localhost debug.yml"
+				sh "ansible-playbook -i localhost ansible/debug.yml"
 			}
 		}
 		stage('clearing the workspace'){
