@@ -20,6 +20,7 @@ pipeline{
 		stage('Code Deploy'){
 			steps{
 				sh "cd ansible"
+				sh "pwd"
 				sh "ansible-playbook -i localhost debug.yml"
 			}
 		}
