@@ -2,12 +2,12 @@
 pipeline{
 	agent none
 	stages{
-		stage('Code Fetch'){
+		stage('code fetch'){
 			steps{
-				echo "Code Fetching"
+				git clone https://github.com/ansarpalakottal/ansible.git
 			}
 		}
-		stage('Build Artifacts'){
+		stage('Build artifacts'){
 			steps{
 				echo "Building artifacts"
 			}
@@ -19,7 +19,7 @@ pipeline{
 		}
 		stage('Code Deploy'){
 			steps{
-				echo "Deploying the code"
+				ansible-playbook -i localhost debug.yml
 			}
 		}
 	}
