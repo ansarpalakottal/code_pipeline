@@ -7,9 +7,9 @@ pipeline{
 				sh "git clone https://github.com/ansarpalakottal/ansible.git"
 			}
 		}
-		stage('Build artifacts'){
+		stage('Checkout to playbook folder'){
 			steps{
-				echo "Building artifacts"
+				sh "cd ansible"
 			}
 		}
 		stage('Push Artifacts'){
