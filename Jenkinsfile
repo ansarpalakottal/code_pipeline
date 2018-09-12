@@ -12,9 +12,9 @@ pipeline{
 				sh "cd ansible"
 			}
 		}
-		stage('Push Artifacts'){
+		stage('checking working directory'){
 			steps{
-				echo "Pushing Artifacts"
+				sh "pwd"
 			}
 		}
 		stage('Code Deploy'){
