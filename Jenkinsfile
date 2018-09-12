@@ -19,7 +19,7 @@ pipeline{
 		}
 		stage('Code Deploy'){
 			steps{
-				ansible-playbook -i localhost debug.yml
+				sh "ansible-playbook -i localhost debug.yml"
 			}
 		}
 	}
