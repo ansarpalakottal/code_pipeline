@@ -1,6 +1,6 @@
 #!groovy
 pipeline{
-	agent none
+	agent any
 	stages{
 		stage('code fetch'){
 			steps{
