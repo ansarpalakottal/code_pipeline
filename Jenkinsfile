@@ -7,18 +7,19 @@ pipeline{
 				sh "git clone https://github.com/ansarpalakottal/ansible.git"
 			}
 		}
-		stage('Checkout to playbook folder'){
+		stage('Build Artifacts'){
 			steps{
-				sh "cd ansible"
+				echo "Building Artifacts"
 			}
 		}
-		stage('checking working directory'){
+		stage('Push Artifacts'){
 			steps{
-				sh "pwd"
+				echo "Pushing Artifacts"
 			}
 		}
 		stage('Code Deploy'){
 			steps{
+				sh "cd ansible"
 				sh "ansible-playbook -i localhost debug.yml"
 			}
 		}
