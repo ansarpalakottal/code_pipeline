@@ -1,15 +1,19 @@
 #!groovy
 pipeline{
-	agent none
+	agent {
+		node{
+			label node_1
+		}
+	}
 	stages{
 		stage('code fetch'){
 			steps{
-				echo "Code Fetching"
+				sh "git clone https://github.com/ansarpalakottal/ansible.git"
 			}
 		}
-		stage('Build artifacts'){
+		stage('Build Artifacts'){
 			steps{
-				echo "Building artifacts"
+				echo "Building Artifacts"
 			}
 		}
 		stage('Push Artifacts'){
@@ -19,7 +23,12 @@ pipeline{
 		}
 		stage('Code Deploy'){
 			steps{
-				echo "Deploying the code"
+				sh "ansible-playbook -i localhost ansible/debug.yml"
+			}
+		}
+		stage('clearing the workspace'){
+			steps{
+				deleteDir()
 			}
 		}
 	}
