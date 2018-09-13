@@ -26,10 +26,10 @@ pipeline{
 				sh "ansible-playbook -i localhost ansible/debug.yml"
 			}
 		}
-		stage('clearing the workspace'){
-			steps{
-				deleteDir()
-			}
-		}
+		#stage('clearing the workspace'){
+		#	steps{
+		#		deleteDir()
+		#	}
+		#}
 	}
 }
