@@ -23,7 +23,7 @@ pipeline{
 		}
 		stage('Code Deploy'){
 			steps{
-				sh "ansible-playbook -i localhost ansible/debug.yml"
+				sh "ansible-playbook -i hosts ansible/debug.yml"
 			}
 		}
 		#stage('clearing the workspace'){
