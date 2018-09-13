@@ -12,9 +12,9 @@ pipeline{
 				echo "Building Artifacts"
 			}
 		}
-		stage('Push Artifacts'){
+		stage('Checking the user'){
 			steps{
-				echo "Pushing Artifacts"
+				sh 'whoami'
 			}
 		}
 		stage('Code Deploy'){
