@@ -2,7 +2,7 @@
 pipeline{
 	agent {
 		node{
-			label node_1
+			label master
 		}
 	}
 	stages{
@@ -26,10 +26,10 @@ pipeline{
 				sh "ansible-playbook -i hosts ansible/debug.yml"
 			}
 		}
-		#stage('clearing the workspace'){
-		#	steps{
-		#		deleteDir()
-		#	}
-		#}
+		stage('clearing the workspace'){
+			steps{
+				deleteDir()
+			}
+		}
 	}
 }
