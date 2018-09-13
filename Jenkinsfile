@@ -2,6 +2,11 @@
 pipeline{
 	agent any
 	stages{
+		stage('clearing the workspace'){
+			steps{
+				deleteDir()
+			}
+		}
 		stage('code fetch'){
 			steps{
 				sh "git clone https://github.com/ansarpalakottal/ansible.git"
@@ -20,11 +25,6 @@ pipeline{
 		stage('Code Deploy'){
 			steps{
 				sh "ansible-playbook -i ansible/hosts ansible/debug.yml -vvv"
-			}
-		}
-		stage('clearing the workspace'){
-			steps{
-				deleteDir()
 			}
 		}
 	}
