@@ -1,6 +1,6 @@
 #!groovy
 pipeline{
-	agent any
+	agent none
 	stages{
 		stage('code fetch'){
 			steps{
@@ -19,7 +19,7 @@ pipeline{
 		}
 		stage('Code Deploy'){
 			steps{
-				sh "ansible-playbook -i hosts ansible/debug.yml"
+				sh "ansible-playbook -i 18.223.187.166 ansible/debug.yml"
 			}
 		}
 		stage('clearing the workspace'){
