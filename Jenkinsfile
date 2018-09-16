@@ -1,6 +1,6 @@
 #!groovy
 pipeline{
-	agent any
+	agent none
 	stages{
 		stage('clearing the workspace'){
 			steps{
